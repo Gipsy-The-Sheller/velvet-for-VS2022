@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0678AAE2-E831-4831-A548-BB238DF4B372}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\bin</OutDir>
+    <IntDir>..\..\bin\g_tmp</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;ZLIB_WINAPI;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>windows_port\lib\zlibwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="allocArray.cpp" />
+    <ClCompile Include="autoOpen.cpp" />
+    <ClCompile Include="binarySequences.cpp" />
+    <ClCompile Include="concatenatedGraph.cpp" />
+    <ClCompile Include="concatenatedPreGraph.cpp" />
+    <ClCompile Include="correctedGraph.cpp" />
+    <ClCompile Include="dfib.cpp" />
+    <ClCompile Include="dfibHeap.cpp" />
+    <ClCompile Include="fib.cpp" />
+    <ClCompile Include="fibHeap.cpp" />
+    <ClCompile Include="graph.cpp" />
+    <ClCompile Include="graphReConstruction.cpp" />
+    <ClCompile Include="graphStats.cpp" />
+    <ClCompile Include="kmer.cpp" />
+    <ClCompile Include="kmerOccurenceTable.cpp" />
+    <ClCompile Include="locallyCorrectedGraph.cpp" />
+    <ClCompile Include="windows_port\localmath.cpp" />
+    <ClCompile Include="windows_port\localmemory.cpp" />
+    <ClCompile Include="windows_port\localtime.cpp" />
+    <ClCompile Include="passageMarker.cpp" />
+    <ClCompile Include="preGraph.cpp" />
+    <ClCompile Include="preGraphConstruction.cpp" />
+    <ClCompile Include="readCoherentGraph.cpp" />
+    <ClCompile Include="readSet.cpp" />
+    <ClCompile Include="recycleBin.cpp" />
+    <ClCompile Include="roadMap.cpp" />
+    <ClCompile Include="run2.cpp" />
+    <ClCompile Include="scaffold.cpp" />
+    <ClCompile Include="shortReadPairs.cpp" />
+    <ClCompile Include="splay.cpp" />
+    <ClCompile Include="splayTable.cpp" />
+    <ClCompile Include="tightString.cpp" />
+    <ClCompile Include="utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="allocArray.h" />
+    <ClInclude Include="autoOpen.h" />
+    <ClInclude Include="binarySequences.h" />
+    <ClInclude Include="concatenatedGraph.h" />
+    <ClInclude Include="concatenatedPreGraph.h" />
+    <ClInclude Include="correctedGraph.h" />
+    <ClInclude Include="dfib.h" />
+    <ClInclude Include="dfibHeap.h" />
+    <ClInclude Include="dfibpriv.h" />
+    <ClInclude Include="fib.h" />
+    <ClInclude Include="fibHeap.h" />
+    <ClInclude Include="fibpriv.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="graphReConstruction.h" />
+    <ClInclude Include="graphStats.h" />
+    <ClInclude Include="kmer.h" />
+    <ClInclude Include="kmerOccurenceTable.h" />
+    <ClInclude Include="kseq.h" />
+    <ClInclude Include="locallyCorrectedGraph.h" />
+    <ClInclude Include="windows_port\localmath.h" />
+    <ClInclude Include="windows_port\localmemory.h" />
+    <ClInclude Include="windows_port\localtime.h" />
+    <ClInclude Include="makeconfig.h" />
+    <ClInclude Include="passageMarker.h" />
+    <ClInclude Include="preGraph.h" />
+    <ClInclude Include="preGraphConstruction.h" />
+    <ClInclude Include="readCoherentGraph.h" />
+    <ClInclude Include="readSet.h" />
+    <ClInclude Include="recycleBin.h" />
+    <ClInclude Include="roadMap.h" />
+    <ClInclude Include="run.h" />
+    <ClInclude Include="scaffold.h" />
+    <ClInclude Include="shortReadPairs.h" />
+    <ClInclude Include="splay.h" />
+    <ClInclude Include="splayTable.h" />
+    <ClInclude Include="tightString.h" />
+    <ClInclude Include="utility.h" />
+    <ClInclude Include="windows_port\localunistd.h" />
+    <ClInclude Include="windows_port\zconf.h" />
+    <ClInclude Include="windows_port\zlib.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
