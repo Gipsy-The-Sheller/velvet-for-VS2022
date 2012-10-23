@@ -9,7 +9,7 @@ C RUN
 
 A REQUIREMENTS
 
-Velvet should function on any standard 64bit Linux environment with
+Velvet should function on any standard 64bit Windows environment with
 Visual Studio 2012. A good amount of physical memory (12GB to start with, more is no luxury)
 is recommended. 
 	
