@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BE8D7A5E-ED9D-4052-B861-626071CB5357}</ProjectGuid>
+    <ProjectGuid>{E7938B50-080E-453A-B15A-EE19D0973444}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -62,12 +62,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\bin</OutDir>
-    <IntDir>..\..\bin\h_tmp</IntDir>
+    <IntDir>..\..\bin\o_tmp</IntDir>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\..\bin</OutDir>
-    <IntDir>..\..\..\bin\h_tmp</IntDir>
+    <OutDir>..\..\bin</OutDir>
+    <IntDir>..\..\bin\o_tmp</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -77,31 +81,34 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;ZLIB_WINAPI;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\velvet\velvetg\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>windows_port\lib\zlibwapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;ZLIB_WINAPI;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\velvet_lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>windows_port\lib\zlibwapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\bin\velvet_lib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,84 +141,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="allocArray.cpp" />
-    <ClCompile Include="autoOpen.cpp" />
-    <ClCompile Include="binarySequences.cpp" />
-    <ClCompile Include="concatenatedGraph.cpp" />
-    <ClCompile Include="concatenatedPreGraph.cpp" />
+    <ClCompile Include="complexTranscripts.cpp" />
     <ClCompile Include="correctedGraph.cpp" />
-    <ClCompile Include="dfib.cpp" />
-    <ClCompile Include="dfibHeap.cpp" />
-    <ClCompile Include="fib.cpp" />
-    <ClCompile Include="fibHeap.cpp" />
-    <ClCompile Include="graph.cpp" />
-    <ClCompile Include="graphReConstruction.cpp" />
-    <ClCompile Include="graphStats.cpp" />
-    <ClCompile Include="kmer.cpp" />
-    <ClCompile Include="kmerOccurenceTable.cpp" />
-    <ClCompile Include="locallyCorrectedGraph.cpp" />
-    <ClCompile Include="passageMarker.cpp" />
-    <ClCompile Include="preGraph.cpp" />
-    <ClCompile Include="preGraphConstruction.cpp" />
-    <ClCompile Include="readCoherentGraph.cpp" />
-    <ClCompile Include="readSet.cpp" />
-    <ClCompile Include="recycleBin.cpp" />
-    <ClCompile Include="roadMap.cpp" />
-    <ClCompile Include="run.cpp" />
+    <ClCompile Include="extractLoci.cpp" />
+    <ClCompile Include="extractMergedTranscripts.cpp" />
+    <ClCompile Include="filterTranscripts.cpp" />
+    <ClCompile Include="locallyCorrectedGraph2.cpp" />
+    <ClCompile Include="locus.cpp" />
+    <ClCompile Include="nodeList.cpp" />
+    <ClCompile Include="oases.cpp" />
+    <ClCompile Include="oasesExport.cpp" />
     <ClCompile Include="scaffold.cpp" />
-    <ClCompile Include="shortReadPairs.cpp" />
-    <ClCompile Include="splay.cpp" />
-    <ClCompile Include="splayTable.cpp" />
-    <ClCompile Include="tightString.cpp" />
-    <ClCompile Include="utility.cpp" />
-    <ClCompile Include="windows_port\dirent.cpp" />
-    <ClCompile Include="windows_port\localmath.cpp" />
-    <ClCompile Include="windows_port\localmemory.cpp" />
-    <ClCompile Include="windows_port\localtime.cpp" />
+    <ClCompile Include="transcript.cpp" />
+    <ClCompile Include="trivialTranscripts.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="allocArray.h" />
-    <ClInclude Include="autoOpen.h" />
-    <ClInclude Include="binarySequences.h" />
-    <ClInclude Include="concatenatedGraph.h" />
-    <ClInclude Include="concatenatedPreGraph.h" />
+    <ClInclude Include="complexTranscripts.h" />
     <ClInclude Include="correctedGraph.h" />
-    <ClInclude Include="dfib.h" />
-    <ClInclude Include="dfibHeap.h" />
-    <ClInclude Include="dfibpriv.h" />
-    <ClInclude Include="fib.h" />
-    <ClInclude Include="fibHeap.h" />
-    <ClInclude Include="fibpriv.h" />
-    <ClInclude Include="globals.h" />
-    <ClInclude Include="graph.h" />
-    <ClInclude Include="graphReConstruction.h" />
-    <ClInclude Include="graphStats.h" />
-    <ClInclude Include="kmer.h" />
-    <ClInclude Include="kmerOccurenceTable.h" />
-    <ClInclude Include="kseq.h" />
-    <ClInclude Include="locallyCorrectedGraph.h" />
-    <ClInclude Include="windows_port\makeconfig.h" />
-    <ClInclude Include="passageMarker.h" />
-    <ClInclude Include="preGraph.h" />
-    <ClInclude Include="preGraphConstruction.h" />
-    <ClInclude Include="readCoherentGraph.h" />
-    <ClInclude Include="readSet.h" />
-    <ClInclude Include="recycleBin.h" />
-    <ClInclude Include="roadMap.h" />
-    <ClInclude Include="run.h" />
+    <ClInclude Include="extractLoci.h" />
+    <ClInclude Include="extractMergedTranscripts.h" />
+    <ClInclude Include="filterTranscripts.h" />
+    <ClInclude Include="locallyCorrectedGraph2.h" />
+    <ClInclude Include="locus.h" />
+    <ClInclude Include="nodeList.h" />
+    <ClInclude Include="oasesExport.h" />
     <ClInclude Include="scaffold.h" />
-    <ClInclude Include="shortReadPairs.h" />
-    <ClInclude Include="splay.h" />
-    <ClInclude Include="splayTable.h" />
-    <ClInclude Include="tightString.h" />
-    <ClInclude Include="utility.h" />
-    <ClInclude Include="windows_port\dirent.h" />
-    <ClInclude Include="windows_port\localmath.h" />
-    <ClInclude Include="windows_port\localmemory.h" />
-    <ClInclude Include="windows_port\localtime.h" />
-    <ClInclude Include="windows_port\localunistd.h" />
-    <ClInclude Include="windows_port\zconf.h" />
-    <ClInclude Include="windows_port\zlib.h" />
+    <ClInclude Include="transcript.h" />
+    <ClInclude Include="trivialTranscripts.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
