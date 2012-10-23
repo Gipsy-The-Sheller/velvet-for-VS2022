@@ -179,9 +179,6 @@
     <ClInclude Include="locallyCorrectedGraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="makeconfig.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="passageMarker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -243,6 +240,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="windows_port\dirent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_port\makeconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -218,9 +218,6 @@
     <ClInclude Include="utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="makeconfig.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="windows_port\localtime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -237,6 +234,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="windows_port\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_port\makeconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

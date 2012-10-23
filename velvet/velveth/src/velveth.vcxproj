@@ -190,7 +190,7 @@
     <ClInclude Include="kmerOccurenceTable.h" />
     <ClInclude Include="kseq.h" />
     <ClInclude Include="locallyCorrectedGraph.h" />
-    <ClInclude Include="makeconfig.h" />
+    <ClInclude Include="windows_port\makeconfig.h" />
     <ClInclude Include="passageMarker.h" />
     <ClInclude Include="preGraph.h" />
     <ClInclude Include="preGraphConstruction.h" />

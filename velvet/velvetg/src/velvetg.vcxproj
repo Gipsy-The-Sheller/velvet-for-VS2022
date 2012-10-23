@@ -193,7 +193,6 @@
     <ClInclude Include="windows_port\localmath.h" />
     <ClInclude Include="windows_port\localmemory.h" />
     <ClInclude Include="windows_port\localtime.h" />
-    <ClInclude Include="makeconfig.h" />
     <ClInclude Include="passageMarker.h" />
     <ClInclude Include="preGraph.h" />
     <ClInclude Include="preGraphConstruction.h" />
@@ -209,6 +208,7 @@
     <ClInclude Include="tightString.h" />
     <ClInclude Include="utility.h" />
     <ClInclude Include="windows_port\localunistd.h" />
+    <ClInclude Include="windows_port\makeconfig.h" />
     <ClInclude Include="windows_port\zconf.h" />
     <ClInclude Include="windows_port\zlib.h" />
   </ItemGroup>
