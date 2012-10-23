@@ -1,16 +1,12 @@
 README.TXT
 
-VELVET SOURCE 
-March 28 2008
-Daniel Zerbino
+Windows Portable Velvet_Oases Source 
 
-NOTE: The PDF manual in this directory contains all the information contained
-in this text file, plus much more!
 
 > SUMMARY
 	* A/ REQUIREMENTS
 	* B/ COMPILING INSTRUCTIONS
-	* C/ WHERE IS THE MANUAL?
+	* C/ RUN 
 
 ----------------------------------------------------------------------------------
 A/ REQUIREMENTS
@@ -18,25 +14,15 @@ A/ REQUIREMENTS
 	Velvet should function on any standard 64bit Linux environment with
 gcc. A good amount of physical memory (12GB to start with, more is no luxury)
 is recommended. 
-
+	
 ----------------------------------------------------------------------------------
 B/ COMPILING INSTRUCTIONS
 
-Normally, with a GNU environment, just type:
-
-> make
-
-For colorspace Velvet replace that command with 
-
-> make color
-
-Otherwise compile each *.c file separately, then execute the default
-instructions at the top of Makefile. 
-
+Open velvet.sln with Visual Studio 2012. velvet solution contains four projects named oases, velvetg, velveth, velvet_lib.
+oases uses velvet_lib as a static linking library. velvetg and velveth is two executable programs of velvet. Make sure the four
+projects are configured with x64 platform before building the solution.
 ----------------------------------------------------------------------------------
-C/ WHERE IS THE MANUAL?
+C/ RUN 
 
-If you cannot find the PDF manual in the source directory (probably because
-you downloaded Velvet through git), you can simply compile it:
-
-> make doc
+After build the solution, there will be a directory named "bin" in the root directory. Please copy /velvet/velvetg/src/windows_port/lib/zlibwapi.dll
+to directory "bin".
