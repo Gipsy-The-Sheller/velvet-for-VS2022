@@ -157,13 +157,14 @@
     <ClCompile Include="readSet.cpp" />
     <ClCompile Include="recycleBin.cpp" />
     <ClCompile Include="roadMap.cpp" />
-    <ClCompile Include="run2.cpp" />
+    <ClCompile Include="run.cpp" />
     <ClCompile Include="scaffold.cpp" />
     <ClCompile Include="shortReadPairs.cpp" />
     <ClCompile Include="splay.cpp" />
     <ClCompile Include="splayTable.cpp" />
     <ClCompile Include="tightString.cpp" />
     <ClCompile Include="utility.cpp" />
+    <ClCompile Include="windows_port\dirent.cpp" />
     <ClCompile Include="windows_port\localmath.cpp" />
     <ClCompile Include="windows_port\localmemory.cpp" />
     <ClCompile Include="windows_port\localtime.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="splayTable.h" />
     <ClInclude Include="tightString.h" />
     <ClInclude Include="utility.h" />
+    <ClInclude Include="windows_port\dirent.h" />
     <ClInclude Include="windows_port\localmath.h" />
     <ClInclude Include="windows_port\localmemory.h" />
     <ClInclude Include="windows_port\localtime.h" />

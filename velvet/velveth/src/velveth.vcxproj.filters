@@ -84,9 +84,6 @@
     <ClCompile Include="roadMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="run2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="scaffold.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -112,6 +109,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="windows_port\localtime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_port\dirent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="run.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,6 +240,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="windows_port\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_port\dirent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
