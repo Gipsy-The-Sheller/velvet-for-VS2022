@@ -202,7 +202,7 @@ int main(int argc, char **argv)
 		if (strcmp(argv[argIndex], "-create_binary") == 0)
 			setCreateBinary(true);
 
-	for (h = hashLength; h < hashLengthMax; h += hashLengthStep) {
+	for (h = hashLength; h <= hashLengthMax; h += hashLengthStep) {
 
 		resetWordFilter(h);
 
@@ -246,7 +246,7 @@ int main(int argc, char **argv)
 			sprintf(buf, "%s/Sequences", directory);
 			remove(buf);
 		} else {
-			strcpy(baseSeqName, "/Sequences");
+			strcpy(baseSeqName, "\\Sequences");
 			// remove other style sequences file
 			sprintf(buf, "%s/CnyUnifiedSeq", directory);
 			remove(buf);
@@ -258,7 +258,7 @@ int main(int argc, char **argv)
 		if ( h == hashLength ) {
 			parseDataAndReadFiles(seqFilename, argc - 2, &(argv[2]), &double_strand, &noHash);
 		} else {
-			sprintf(buf,"rm -f %s",seqFilename);
+			sprintf(buf,"del %s",seqFilename);
 			if (system(buf)) {
 				velvetLog("Command failed!\n");
 				velvetLog("%s\n", buf);
@@ -267,10 +267,12 @@ int main(int argc, char **argv)
 #endif
 				exit(1);
 			}
-			if (argv[1][0] == '/')
-				sprintf(buf,"ln -s %s_%d%s %s",argv[1],hashLength,baseSeqName,seqFilename);
-			else
-				sprintf(buf,"ln -s `pwd`/%s_%d%s %s",argv[1],hashLength,baseSeqName,seqFilename);
+			//if (argv[1][0] == '/')
+				//sprintf(buf,"ln -s %s_%d%s %s",argv[1],hashLength,baseSeqName,seqFilename);
+			//else
+			//	sprintf(buf,"ln -s `pwd`/%s_%d%s %s",argv[1],hashLength,baseSeqName,seqFilename);
+			//sprintf(buf,"mklink /H %s_%d%s %s",argv[1],hashLength,baseSeqName,seqFilename);
+			sprintf(buf,"mklink /H %s %s_%d%s",seqFilename, argv[1], hashLength, baseSeqName);
 			if (system(buf)) {
 				velvetLog("Command failed!\n");
 				velvetLog("%s\n", buf);
