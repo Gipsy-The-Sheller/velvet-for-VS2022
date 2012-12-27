@@ -172,7 +172,7 @@ static SmallNodeList *allocateSmallNodeList()
 		abort();
 	}
 #endif
-	return allocatePointer(getRecycleBinInArray(smallNodeListMemory,
+	return (SmallNodeList*)allocatePointer(getRecycleBinInArray(smallNodeListMemory,
 				omp_get_thread_num()));
 #else
 	if (smallNodeListMemory == NULL)

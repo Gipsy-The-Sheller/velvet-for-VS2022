@@ -69,7 +69,7 @@ static SplayNode *allocateSplayNode()
 		abort();
 	}
 #endif
-	return allocatePointer(getRecycleBinInArray(treeMemory,
+	return (SplayNode*)allocatePointer(getRecycleBinInArray(treeMemory,
 						    omp_get_thread_num()));
 #else
 	if (treeMemory == NULL)
