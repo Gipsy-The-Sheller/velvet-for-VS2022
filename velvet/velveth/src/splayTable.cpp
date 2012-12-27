@@ -118,18 +118,20 @@ static void pushBufferCommit(int thread)
 {
 	StringBuffer *tmp;
 	char *s;
-
+	//change omp flush(var) to omp flush by Sun Zhao
 	s = annotationBufferW[thread]->str;
 	do
 	{
-		#pragma omp flush(s)
+		//#pragma omp flush(s)
+		#pragma omp flush
 	}
 	while (*s);
 	tmp = annotationBufferW[thread];
 	annotationBufferW[thread] = annotationBuffer[thread];
 	annotationBuffer[thread] = tmp;
 	tmp = annotationBufferW[thread];
-	#pragma omp flush(tmp)
+	//#pragma omp flush(tmp)
+	#pragma omp flush
 }
 
 static void pushBuffer(int thread)
@@ -144,16 +146,18 @@ static void pushBuffer(int thread)
 static void writeBuffers(FILE *outFile, int nbThreads)
 {
 	int i;
-
+//change flush(var) to flush by Sun Zhao
 	for (i = 0; i < nbThreads; i++)
 	{
 		StringBuffer *b;
 		char *s;
 
 		b = annotationBufferW[i];
-		#pragma omp flush(b)
+		//#pragma omp flush(b)
+		#pragma omp flush
 		s = b->str;
-		#pragma omp flush(s)
+		//#pragma omp flush(s)
+		#pragma omp flush
 		if (*s)
 		{
 			velvetFprintf(outFile, "%s", annotationBufferW[i]->str);
