@@ -1030,7 +1030,7 @@ static ConnectionStack *allocateConnectionStack(void)
 		abort();
 	}
 #endif
-	return allocatePointer(getRecycleBinInArray(connectionStackMemory,
+	return (ConnectionStack*)allocatePointer(getRecycleBinInArray(connectionStackMemory,
 				omp_get_thread_num()));
 #else
 	if (connectionStackMemory == NULL)

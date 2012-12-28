@@ -194,7 +194,7 @@ allocArrayFree (AllocArray *array, ArrayIdx idx)
 #define BLOCKS_ALLOC_SHIFT 16
 
 static void initAllocArrayArray(AllocArray *array,
-				void *blocks,
+				void **blocks,
 				size_t nbBlocks,
 				size_t elementSize,
 				char *name,
@@ -304,7 +304,7 @@ allocArrayArrayFree(AllocArray *array, ArrayIdx idx)
 	{
 		AllocArrayFreeElement *freeElem;
 
-		freeElem = allocArrayGetElement(array, idx);
+		freeElem = (AllocArrayFreeElement*)allocArrayGetElement(array, idx);
 		freeElem->idx = idx;
 		freeElem->next = array->freeElements;
 		array->freeElements = freeElem;
