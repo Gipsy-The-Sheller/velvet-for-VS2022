@@ -23,7 +23,6 @@
 *.sdf
 *.opensdf
 *.unsuccessfulbuild
-bin/
 x64/
 ipch/
 obj/
