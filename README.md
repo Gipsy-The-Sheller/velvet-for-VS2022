@@ -21,5 +21,5 @@ projects are configured with x64 platform before building the solution.
 
 C RUN 
 
-After build the solution, there will be a directory named "bin" in the root directory. Please copy /velvet/velvetg/src/windows_port/lib/zlibwapi.dll
-to directory "bin".
+After build the solution, there will be a directory named "bin" in the root directory. Please find velveth.exe, velvetg.exe and oases.exe 
+in directory "bin".
