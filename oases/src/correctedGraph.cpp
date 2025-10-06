@@ -2741,7 +2741,7 @@ static void exportLongNodeSequence(FILE * outfile, Node * node, Graph * graph) {
 boolean *removeLowCoverageNodesAndDenounceDubiousReadsConserveLong(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename)
 {
@@ -2760,7 +2760,7 @@ boolean *removeLowCoverageNodesAndDenounceDubiousReadsConserveLong(Graph * graph
 		
 	res = callocOrExit(sequenceCount(graph), boolean);
 		
-	if (export) {
+	if (shouldExport) {
 		outfile = fopen(filename, "w");
 
 		if (outfile == NULL) {
@@ -2820,14 +2820,14 @@ boolean *removeLowCoverageNodesAndDenounceDubiousReadsConserveLong(Graph * graph
 				destroyPassageMarker(marker);
 			}
 
-			if (export && getNodeLength(node) > minLength) 
+			if (shouldExport && getNodeLength(node) > minLength) 
 				exportLongNodeSequence(outfile, node, graph);
 
 			destroyNode(node, graph);
 		}
 	}
 
-	if (export)
+	if (shouldExport)
 		fclose(outfile);
 
 	concatenateGraph(graph);

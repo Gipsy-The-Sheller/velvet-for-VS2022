@@ -38,7 +38,7 @@ Coordinate maxLength(Graph * graph);
 boolean *removeLowCoverageNodesAndDenounceDubiousReads(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename);
 
@@ -46,7 +46,7 @@ void removeLowLongCoverageNodesAndDenounceDubiousReads(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
 						       boolean * dubious,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename);
 
@@ -66,7 +66,7 @@ void exportUnusedReads(Graph* graph, ReadSet * reads, Coordinate minContigKmerLe
 void exportLongNodeMappings(char *filename, Graph * graph, ReadSet * reads,
 			     Coordinate minLength, SequencesReader *seqReadInfo);
 
-void removeHighCoverageNodes(Graph * graph, double maxCov, boolean export, Coordinate minLength, char * filename);
+void removeHighCoverageNodes(Graph * graph, double maxCov, boolean shouldExport, Coordinate minLength, char * filename);
 
 void removeLowArcs(Graph * graph, double cutoff);
 #endif

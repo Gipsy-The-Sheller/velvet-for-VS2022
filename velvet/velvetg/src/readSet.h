@@ -61,7 +61,20 @@ void detachDubiousReads(ReadSet * reads, boolean * dubiousReads);
 
 void destroyReadSet(ReadSet * reads);
 
-inline boolean isCreateBinary();
+//inline boolean isCreateBinary();
+
+inline boolean& getCreateBinary()
+{
+	static boolean createBinary = false;
+	return createBinary;
+}
+
+inline boolean isCreateBinary()
+{
+	return getCreateBinary();
+}
+
+//boolean createBinary = false;
 void setCreateBinary(boolean val);
 
 #endif

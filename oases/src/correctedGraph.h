@@ -31,7 +31,7 @@ void correctGraph(Graph * graph, ShortLength * sequenceLengths, Category * seque
 boolean *removeLowCoverageNodesAndDenounceDubiousReadsConserveLong(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename);
 

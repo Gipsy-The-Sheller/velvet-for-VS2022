@@ -1222,7 +1222,7 @@ removeNodeAndDenounceDubiousReads(Graph *graph,
 boolean *removeLowCoverageNodesAndDenounceDubiousReads(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename)
 {
@@ -1237,7 +1237,7 @@ boolean *removeLowCoverageNodesAndDenounceDubiousReads(Graph * graph,
 	if (denounceReads)
 		res = callocOrExit(sequenceCount(graph), boolean);
 		
-	if (export) {
+	if (shouldExport) {
 		outfile = fopen(filename, "w");
 
 		if (outfile == NULL) {
@@ -1283,7 +1283,7 @@ boolean *removeLowCoverageNodesAndDenounceDubiousReads(Graph * graph,
 							  outfile);
 	}
 
-	if (export)
+	if (shouldExport)
 		fclose(outfile);
 
 	concatenateGraph(graph);
@@ -1329,7 +1329,7 @@ void removeLowLongCoverageNodesAndDenounceDubiousReads(Graph * graph,
 						       double minCov,
 						       ReadSet * reads,
 						       boolean * res,
-						       boolean export,
+						       boolean shouldExport,
 						       Coordinate minLength,
 						       char *filename)
 {
@@ -1343,7 +1343,7 @@ void removeLowLongCoverageNodesAndDenounceDubiousReads(Graph * graph,
 
 	velvetLog("Removing contigs with coverage < %f...\n", minCov);
 		
-	if (export) {
+	if (shouldExport) {
 		outfile = fopen(filename, "a");
 
 		if (outfile == NULL) {
@@ -1388,13 +1388,13 @@ void removeLowLongCoverageNodesAndDenounceDubiousReads(Graph * graph,
 							  outfile);
 	}
 
-	if (export)
+	if (shouldExport)
 		fclose(outfile);
 
 	concatenateGraph(graph);
 }
 
-void removeHighCoverageNodes(Graph * graph, double maxCov, boolean export, Coordinate minLength, char *filename)
+void removeHighCoverageNodes(Graph * graph, double maxCov, boolean shouldExport, Coordinate minLength, char *filename)
 {
 	IDnum index;
 	Node *node;
@@ -1405,7 +1405,7 @@ void removeHighCoverageNodes(Graph * graph, double maxCov, boolean export, Coord
 
 	velvetLog("Applying an upper coverage cutoff of %f...\n", maxCov);
 		
-	if (export) {
+	if (shouldExport) {
 		outfile = fopen(filename, "w");
 
 		if (outfile == NULL) {
@@ -1423,14 +1423,14 @@ void removeHighCoverageNodes(Graph * graph, double maxCov, boolean export, Coord
 		    && getTotalCoverage(node) / getNodeLength(node) > maxCov) {
 			destroyNodePassageMarkers(graph, node);
 
-			if (export && getNodeLength(node) > minLength) 
+			if (shouldExport && getNodeLength(node) > minLength) 
 				exportLongNodeSequence(outfile, node, graph, NULL, NULL, -1);
 
 			destroyNode(node, graph);
 		}
 	}
 
-	if (export)
+	if (shouldExport)
 		fclose(outfile);
 
 	concatenateGraph(graph);

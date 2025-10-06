@@ -53,27 +53,27 @@ Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
 #include "windows_port/makeconfig.h"
 #include "windows_port/localtime.h"
 #define inline __inline
-extern struct tString_st;
-extern struct readSet_st;
-extern struct splayTable_st;
-extern struct annotation_st;
-extern struct roadmap_st;
-extern struct insertionMarker_st;
-extern struct arc_st;
-extern struct node_st;
-extern struct graph_st;
-extern struct passage_st;
-extern struct passageList_st;
-extern struct readStart_st;
-extern struct preArc_st;
-extern struct preNode_st;
-extern struct preGraph_st;
-extern struct fibheap;
-extern struct fibheap_el;
-extern struct dfibheap;
-extern struct dfibheap_el;
-extern struct kmerOccurence_st;
-extern struct kmerOccurenceTable_st;
+struct tString_st;
+struct readSet_st;
+struct splayTable_st;
+struct annotation_st;
+struct roadmap_st;
+struct insertionMarker_st;
+struct arc_st;
+struct node_st;
+struct graph_st;
+struct passage_st;
+struct passageList_st;
+struct readStart_st;
+struct preArc_st;
+struct preNode_st;
+struct preGraph_st;
+struct fibheap;
+struct fibheap_el;
+struct dfibheap;
+struct dfibheap_el;
+struct kmerOccurence_st;
+struct kmerOccurenceTable_st;
 #endif
 
 // Namespace sizes

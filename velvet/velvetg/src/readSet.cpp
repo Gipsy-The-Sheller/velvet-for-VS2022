@@ -72,10 +72,7 @@ static Mask * newMask(SequencesWriter *seqWriteInfo, Coordinate position)
 // note that createBinary is only used by velveth
 //
 boolean createBinary = false;
-inline boolean isCreateBinary()
-{
-	return createBinary;
-}
+
 
 void setCreateBinary(boolean val)
 {
