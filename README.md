@@ -23,3 +23,5 @@ C RUN
 
 After build the solution, there will be a directory named "bin" in the root directory. Please find velveth.exe, velvetg.exe and oases.exe 
 in directory "bin".
+
+This version modified several source code files (mainly for the compilation error of the variable 'export' by MSVC). Now Velvet can be compiled by VS2022 directly.
